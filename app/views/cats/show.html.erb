@@ -3,8 +3,9 @@
 </div>
 
 <h3>This cat's toys are...</h3>
+
 <% @cat.toys.each do |toy| %>
-<div class="well">
-  <em><%= toy.name %></em>
-</div>
+  <div class="well">
+    <em><%= toy.name %></em>
+  </div>
 <% end %>
