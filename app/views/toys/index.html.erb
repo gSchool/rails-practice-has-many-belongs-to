@@ -16,7 +16,13 @@
           <%= link_to toy.name, toy_path(toy) %>
         </td>
         <td>
-          <em>Replace this with a link to the cat who owns this toy</em>
+          <em>
+            <% if toy.cat_id != nil %>
+              <%= link_to toy.cat.name, cat_path(toy.cat_id) %>
+            <% else %>
+            WOMP WOMP No Ower :(
+            <% end %>
+          </em>
         </td>
       </tr>
     <% end %>

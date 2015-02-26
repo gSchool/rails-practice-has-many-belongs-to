@@ -1,0 +1,18 @@
+<div>
+  Pick toys for
+  <%= @cat.name %>
+</div>
+
+<% @toys.each do |toy| %>
+
+  <div>
+    <tr>
+      <td>
+        <% if toy.cat_id == nil %>
+          <%= link_to toy.name, cats_linkedit_path(toy_remove: "false", toy_id: toy.id, cat_id: @cat.id), method: :put
+ %>
+        <% end %>
+      </td>
+    </tr>
+  </div>
+<% end %>
