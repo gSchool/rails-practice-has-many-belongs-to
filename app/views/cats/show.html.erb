@@ -2,8 +2,17 @@
   <h1><%= @cat.name %></h1>
 </div>
 
+  <div>
+    <%= link_to "Pick New Toy", edit_cat_path(params[:id]) %>
+  </div>
+
 <h3>This cat's toys are...</h3>
 
 <div class="well">
-  <em>Replace this with a list of the toys that belong to this cat</em>
+  <% @cat.toys.each do |toy| %>
+    <p>
+      <%= toy.name %>
+        <%= link_to "Toy was lost/eaten/destroyed", cats_linkedit_path(toy_remove: "true", toy_id: toy.id, cat_id: @cat.id), method: :put %>
+    </p>
+  <% end %>
 </div>
