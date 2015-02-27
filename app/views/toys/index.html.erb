@@ -16,7 +16,7 @@
           <%= link_to toy.name, toy_path(toy) %>
         </td>
         <td>
-          <em><%= link_to toy.cat.name, cat_path(toy)%></em>
+          <em><%= link_to toy.cat.name, cat_path(toy.cat_id)%></em>
         </td>
       </tr>
     <% end %>
